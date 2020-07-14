@@ -1,0 +1,9 @@
+RewriteEngine on
+RewriteCond %{HTTP_HOST} !^www\.
+RewriteRule ^(.*)$ http://www.%{HTTP_HOST}/$1 [R=301,L]
+RewriteCond %{THE_REQUEST} ^.*/index.php 
+RewriteRule ^(.*)index.php$ http://www.deepdrivingschool.ca/$1 [R=301,L] 
+RewriteRule ^home$ /index.php?p=home [L]
+RewriteRule ^services$ /index.php?p=services [L]
+RewriteRule ^contact-us$ /index.php?p=contact-us [L]
+RewriteRule ^error$ /index.php?p=error [L]
